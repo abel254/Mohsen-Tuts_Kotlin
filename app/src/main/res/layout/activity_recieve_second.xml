@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecieveSecondActivity">
+
+    <TextView
+        android:id="@+id/txt_recieve_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="Second Activity"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_txt_recieve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="data"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/txt_recieve_second"
+        app:layout_constraintStart_toStartOf="@+id/txt_recieve_second"
+        app:layout_constraintTop_toBottomOf="@+id/txt_recieve_second" />
+
+    <Button
+        android:id="@+id/btn_send_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="SEND DATA"
+        app:layout_constraintEnd_toEndOf="@+id/edit_txt_recieve"
+        app:layout_constraintStart_toStartOf="@+id/edit_txt_recieve"
+        app:layout_constraintTop_toBottomOf="@+id/edit_txt_recieve" />
+</androidx.constraintlayout.widget.ConstraintLayout>

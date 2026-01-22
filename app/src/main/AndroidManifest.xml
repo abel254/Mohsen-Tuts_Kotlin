@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MohsenApp">
         <activity
+            android:name=".RecieveSecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecieveMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".IntentActivity"
             android:exported="false" />
         <activity

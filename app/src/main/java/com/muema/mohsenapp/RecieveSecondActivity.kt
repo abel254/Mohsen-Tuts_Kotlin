@@ -1,40 +1,35 @@
 package com.muema.mohsenapp
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class RecieveSecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-
-        val btn1 = findViewById<Button>(R.id.intentData)
-        val btnIntentRecieve = findViewById<Button>(R.id.btnIntentRecieve)
+        setContentView(R.layout.activity_recieve_second)
 
 
-        // Intent Data Transfer
+        val edit_data = findViewById<EditText>(R.id.edit_txt_recieve)
+        val btn_send = findViewById<TextView>(R.id.btn_send_second)
 
-        btn1.setOnClickListener {
-            val intent1 = Intent(this, SecondActivity::class.java)
-            startActivity(intent1)
-            finish()
-        }
+        btn_send.setOnClickListener {
 
-        // Intent Recieve Data from Second Activity
-
-        btnIntentRecieve.setOnClickListener {
             val intent = Intent(this, RecieveMainActivity::class.java)
-            startActivity(intent)
+            intent.putExtra("data", edit_data.text.toString())
+
+            setResult(Activity.RESULT_OK, intent)
+
             finish()
+
         }
-
-
 
 
 
