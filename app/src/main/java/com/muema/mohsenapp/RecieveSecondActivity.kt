@@ -9,21 +9,27 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.muema.mohsenapp.databinding.ActivityRecieveSecondBinding
 
 class RecieveSecondActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityRecieveSecondBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_recieve_second)
+        binding = ActivityRecieveSecondBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
 
 
-        val edit_data = findViewById<EditText>(R.id.edit_txt_recieve)
-        val btn_send = findViewById<TextView>(R.id.btn_send_second)
+        // val edit_data = findViewById<EditText>(R.id.edit_txt_recieve)
+        // val btn_send = findViewById<TextView>(R.id.btn_send_second)
 
-        btn_send.setOnClickListener {
+        binding.btnSendSecond.setOnClickListener {
 
             val intent = Intent(this, RecieveMainActivity::class.java)
-            intent.putExtra("data", edit_data.text.toString())
+            intent.putExtra("data", binding.editTxtRecieve.text.toString())
 
             setResult(Activity.RESULT_OK, intent)
 

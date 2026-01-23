@@ -10,8 +10,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.muema.mohsenapp.databinding.ActivityRecieveMainBinding
 
 class RecieveMainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityRecieveMainBinding
 
     var resultText = ""
 
@@ -29,12 +32,14 @@ class RecieveMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_recieve_main)
+        binding = ActivityRecieveMainBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
 
 
-        val btn_next = findViewById<TextView>(R.id.btn_next)
+        //val btn_next = findViewById<TextView>(R.id.btn_next)
 
-        btn_next.setOnClickListener {
+        binding.btnNext.setOnClickListener {
 
             val intent = Intent(this, RecieveSecondActivity::class.java)
 

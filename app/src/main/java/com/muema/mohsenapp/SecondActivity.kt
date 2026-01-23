@@ -9,29 +9,37 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.muema.mohsenapp.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivitySecondBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivitySecondBinding.inflate(layoutInflater)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_second)
 
+        setContentView(binding.root)
 
+/*
         val btnSend = findViewById<Button>(R.id.button)
         val edtName = findViewById<EditText>(R.id.edtName)
         val edtAge = findViewById<EditText>(R.id.edtAge)
         val chBox = findViewById<CheckBox>(R.id.checkBox)
 
+ */
+
         var chBoxState = false
 
-        chBox.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
              if (isChecked) chBoxState = true
             if (!isChecked) chBoxState = false
         }
 
-        btnSend.setOnClickListener {
-            var name = edtName.text.toString()
-            var age = edtAge.text.toString().toInt()
+        binding.button.setOnClickListener {
+            var name = binding.edtName.text.toString()
+            var age = binding.edtAge.text.toString().toInt()
 
             val intent = Intent(this, IntentActivity::class.java)
 

@@ -33,8 +33,39 @@
         android:id="@+id/btnIntentRecieve"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="Intent-recieve-data"
         app:layout_constraintStart_toStartOf="@+id/intentData"
         app:layout_constraintTop_toBottomOf="@+id/intentData" />
+
+    <Button
+        android:id="@+id/menuOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu-option"
+        app:layout_constraintStart_toStartOf="@+id/btnIntentRecieve"
+        app:layout_constraintTop_toBottomOf="@+id/btnIntentRecieve" />
+
+    <Button
+        android:id="@+id/btnAlertDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alert-dialog and Vector"
+        app:layout_constraintStart_toStartOf="@+id/menuOption"
+        app:layout_constraintTop_toBottomOf="@+id/menuOption" />
+
+    <Button
+        android:id="@+id/btnLinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Linear-layout"
+        app:layout_constraintStart_toStartOf="@+id/btnAlertDialog"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlertDialog" />
+
+    <Button
+        android:id="@+id/btnFragmentActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fragments"
+        app:layout_constraintStart_toStartOf="@+id/btnLinearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/btnLinearLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

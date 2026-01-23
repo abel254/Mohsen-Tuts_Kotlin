@@ -6,15 +6,21 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.muema.mohsenapp.databinding.ActivityIntentBinding
 
 class IntentActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityIntentBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_intent)
+        binding = ActivityIntentBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
 
 
-        val txtRes = findViewById<TextView>(R.id.textView)
+        //val txtRes = findViewById<TextView>(R.id.textView)
 
         val intent = getIntent()
 
@@ -22,7 +28,7 @@ class IntentActivity : AppCompatActivity() {
         val age = intent.getIntExtra("Age", 0)
         val chBoxState = intent.getBooleanExtra("State", false)
 
-        txtRes.text = "collected data \n\n name: "+name+"\n age: "+age+"\nstate: "+chBoxState
+        binding.textView.text = "collected data \n\n name: "+name+"\n age: "+age+"\nstate: "+chBoxState
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
